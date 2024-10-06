@@ -20,7 +20,7 @@ import pages.LoginPage;
 @Listeners(Listener.class)
 public class LoginTest extends BaseClass {
 
-	@Test
+	@Test(groups= {"sanity"}, description = "Login failure test")
 	public void TC01_LoginFailureTest() throws InterruptedException {
 
 		LoginPage lp = new LoginPage();
@@ -42,7 +42,7 @@ public class LoginTest extends BaseClass {
 
 	}
 
-	@Test
+	@Test(groups= {"sanity"}, description = "Login success test")
 	public void TC02_LoginSuccessTest() {
 
 		LoginPage lp = new LoginPage();
@@ -81,5 +81,18 @@ public class LoginTest extends BaseClass {
 		return testdata.keySet().iterator();
 
 	}
+  
+	   @Test
+        public void TC05_LoginFailureTest() {
+		
+		LoginPage lp = new LoginPage();
+		
+		String UserNameVal = sheet.getRow(1).getCell(0).getStringCellValue();
+		String PasswordVal = sheet.getRow(1).getCell(1).getStringCellValue();
+		
+		lp.LoginFunction(UserNameVal, PasswordVal);
+		lp.ValidateErrorMsg("The email or password you have entered is invalid.");
 
+
+}
 }
