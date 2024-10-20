@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="sanity">
-	<test thread-count="1" name="Test">
+	<test thread-count="2" name="Test" parallel="methods">
+
 		<parameter name="param1" value="aaa@bbb.com" />
 		<parameter name="param2" value="Abc@12345" />
 		<groups>

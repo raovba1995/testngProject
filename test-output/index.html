@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -108,6 +108,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-sanity" title="testcases.LoginTest" class="method navigator-link" hash-for-method="TC02_LoginSuccessTest">TC02_LoginSuccessTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-sanity" title="testcases.LoginTest" class="method navigator-link" hash-for-method="TC03_LoginSuccessTest(aaa@bbb.com, Abc@12345)">TC03_LoginSuccessTest(aaa@bbb.com, Abc@12345)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-sanity -->
@@ -146,6 +151,16 @@
 (Login success test)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC03_LoginSuccessTest(aaa@bbb.com, Abc@12345)">
+                  </a> <!-- TC03_LoginSuccessTest(aaa@bbb.com, Abc@12345) -->
+                  <span class="method-name">TC03_LoginSuccessTest</span>
+                  <span class="parameters">(aaa@bbb.com, Abc@12345)</span>
+                  <em>
+(Login success test with parameters)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-sanity-class-passed -->
         </div> <!-- panel sanity -->
@@ -158,7 +173,7 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;sanity&quot;&gt;
-  &lt;test thread-count=&quot;1&quot; name=&quot;Test&quot;&gt;
+  &lt;test thread-count=&quot;2&quot; parallel=&quot;methods&quot; name=&quot;Test&quot;&gt;
     &lt;parameter name=&quot;param1&quot; value=&quot;aaa@bbb.com&quot;/&gt;
     &lt;parameter name=&quot;param2&quot; value=&quot;Abc@12345&quot;/&gt;
     &lt;groups&gt;
@@ -203,6 +218,10 @@
                 <span class="method-in-group-name">TC02_LoginSuccessTest</span>
                 <br/>
               </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">TC03_LoginSuccessTest</span>
+                <br/>
+              </div> <!-- method-in-group -->
             </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
@@ -220,20 +239,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'TC02_LoginSuccessTest')
+data.setCell(0, 1, 'TC03_LoginSuccessTest')
 data.setCell(0, 2, 'testcases.LoginTest')
-data.setCell(0, 3, 20763);
+data.setCell(0, 3, 11746);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'TC01_LoginFailureTest')
 data.setCell(1, 2, 'testcases.LoginTest')
-data.setCell(1, 3, 14020);
+data.setCell(1, 3, 11131);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'TC02_LoginSuccessTest')
+data.setCell(2, 2, 'testcases.LoginTest')
+data.setCell(2, 3, 8252);
 window.suiteTableData['sanity']= { tableData: data, tableDiv: 'times-div-sanity'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 34 seconds</span>
+              <span class="suite-total-time">Total running time: 31 seconds</span>
               <div id="times-div-sanity">
               </div> <!-- times-div-sanity -->
             </div> <!-- times-div -->
@@ -248,7 +271,7 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-sanity" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">6 ignored methods</span>
+            <span class="header-content">5 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
@@ -257,8 +280,6 @@ return data;
                 <span class="ignored-method-name">SetUpExcel</span>
                 <br/>
                 <span class="ignored-method-name">TC05_LoginFailureTest</span>
-                <br/>
-                <span class="ignored-method-name">TC03_LoginSuccessTest</span>
                 <br/>
                 <span class="ignored-method-name">TC04_LoginSuccessTest</span>
                 <br/>
@@ -291,34 +312,46 @@ return data;
               <div class="chronological-class-name">testcases.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">SetUpDriver</span>
-                <span class="method-start">690 ms</span>
+                <span class="method-start">474 ms</span>
               </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">TC01_LoginFailureTest</span>
-                <span class="method-start">10645 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">TearDown</span>
-                <span class="method-start">24665 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">SetUpDriver</span>
-                <span class="method-start">25003 ms</span>
+                <span class="method-start">474 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">TC02_LoginSuccessTest</span>
-                <span class="method-start">29093 ms</span>
+                <span class="method-start">5202 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TC01_LoginFailureTest</span>
+                <span class="method-start">5254 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">TearDown</span>
-                <span class="method-start">49859 ms</span>
+                <span class="method-start">13473 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">SetUpDriver</span>
+                <span class="method-start">13774 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method after">
+                <span class="method-name">TearDown</span>
+                <span class="method-start">16385 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">TC03_LoginSuccessTest(aaa@bbb.com, Abc@12345)</span>
+                <span class="method-start">17156 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">TearDown</span>
+                <span class="method-start">28903 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testcases.HomePageTest</div> <!-- chronological-class-name -->
               <div class="configuration-test after">
                 <span class="method-name">CloseExcel</span>
-                <span class="method-start">50128 ms</span>
+                <span class="method-start">29175 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

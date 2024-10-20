@@ -23,7 +23,7 @@ public class LoginTest extends BaseClass {
 	@Test(groups= {"sanity"}, description = "Login failure test")
 	public void TC01_LoginFailureTest() throws InterruptedException {
 
-		LoginPage lp = new LoginPage();
+		LoginPage lp = new LoginPage(GetDriver());
 		lp.LoginFunction("abc@xyz.com", "Abc@1234");
 		lp.ValidateErrorMsg("The email or password you have entered is invalid.");
 
@@ -45,7 +45,7 @@ public class LoginTest extends BaseClass {
 	@Test(groups= {"sanity"}, description = "Login success test")
 	public void TC02_LoginSuccessTest() {
 
-		LoginPage lp = new LoginPage();
+		LoginPage lp = new LoginPage(GetDriver());
 		lp.LoginFunction("vibhavrao2495@gmail.com", "Browser@616");
 
 	}
@@ -55,7 +55,7 @@ public class LoginTest extends BaseClass {
 
 	public void TC03_LoginSuccessTest(String Uname, String Pwd) {
 
-		LoginPage lp = new LoginPage();
+		LoginPage lp = new LoginPage(GetDriver());
 		lp.LoginFunction(Uname, Pwd);
 
 	}
@@ -65,7 +65,7 @@ public class LoginTest extends BaseClass {
 	@Test(dataProvider = "dp")
 	public void TC04_LoginSuccessTest(String key) {
 
-		LoginPage lp = new LoginPage();
+		LoginPage lp = new LoginPage(GetDriver());
 		lp.LoginFunction(key, testdata.get(key));
 
 	}
@@ -85,7 +85,7 @@ public class LoginTest extends BaseClass {
 	   @Test
         public void TC05_LoginFailureTest() {
 		
-		LoginPage lp = new LoginPage();
+		LoginPage lp = new LoginPage(GetDriver());
 		
 		String UserNameVal = sheet.getRow(1).getCell(0).getStringCellValue();
 		String PasswordVal = sheet.getRow(1).getCell(1).getStringCellValue();
